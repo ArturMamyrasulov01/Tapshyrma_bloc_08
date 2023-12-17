@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tapshyrma_bloc_08/app/utils/colors/app_colors.dart';
 import 'package:tapshyrma_bloc_08/my_app.dart';
 
+import '../../common_widgets/contianer_widget.dart';
+
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -23,53 +25,41 @@ class HomeView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: AppColors.darkBgContainetColor,
-                      ),
+                    child: ContainerWidget(
+                      child: Column(),
                     ),
                   ),
                   SizedBox(width: size.width * 0.05),
                   Expanded(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: AppColors.darkBgContainetColor,
-                      ),
+                    child: ContainerWidget(
+                      child: Column(),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(width: size.height * 0.05),
+            SizedBox(height: size.height * 0.03),
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.darkBgContainetColor,
-                ),
+              child: ContainerWidget(
+                child: Column(),
               ),
             ),
-            SizedBox(width: size.height * 0.1),
+            SizedBox(height: size.height * 0.03),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: AppColors.darkBgContainetColor,
-                      ),
+                    child: ContainerWidget(
+                      child: Column(),
                     ),
                   ),
                   SizedBox(
                     width: size.width * 0.05,
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: AppColors.darkBgContainetColor,
-                      ),
+                    child: ContainerWidget(
+                      child: Column(),
                     ),
                   ),
                 ],
