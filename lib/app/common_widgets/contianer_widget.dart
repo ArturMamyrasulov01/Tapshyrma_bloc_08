@@ -11,6 +11,8 @@ class ContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: AppColors.darkBgContainetColor,

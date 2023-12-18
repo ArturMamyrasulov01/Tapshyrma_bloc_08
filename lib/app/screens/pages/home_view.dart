@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:tapshyrma_bloc_08/app/utils/colors/app_colors.dart';
+import 'package:tapshyrma_bloc_08/app/utils/styles/app_text_styles.dart';
+import 'package:tapshyrma_bloc_08/app/utils/text/app_text.dart';
 import 'package:tapshyrma_bloc_08/my_app.dart';
 
 import '../../common_widgets/contianer_widget.dart';
+import '../../common_widgets/icon_and_text_widget.dart';
+import '../../common_widgets/text_state_button_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double sliderValue = 180;
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.darkBgColor,
@@ -24,15 +29,21 @@ class HomeView extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: ContainerWidget(
-                      child: Column(),
+                      child: IconAndTextWidget(
+                        icon: Icons.male,
+                        text: AppTexts.male,
+                      ),
                     ),
                   ),
                   SizedBox(width: size.width * 0.05),
-                  Expanded(
+                  const Expanded(
                     child: ContainerWidget(
-                      child: Column(),
+                      child: IconAndTextWidget(
+                        icon: Icons.female,
+                        text: AppTexts.female,
+                      ),
                     ),
                   ),
                 ],
@@ -41,7 +52,24 @@ class HomeView extends StatelessWidget {
             SizedBox(height: size.height * 0.03),
             Expanded(
               child: ContainerWidget(
-                child: Column(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      AppTexts.height,
+                      style: AppTextStyles.textColor20,
+                    ),
+                    Text(
+                      "180 cm",
+                      style: AppTextStyles.white45,
+                    ),
+                    Slider(
+                      max: 200,
+                      value: sliderValue,
+                      onChanged: (adamBasu) {},
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(height: size.height * 0.03),
@@ -51,7 +79,13 @@ class HomeView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ContainerWidget(
-                      child: Column(),
+                      child: TextStateButtonWidget(
+                        size: size,
+                        onPressedMinus: () {},
+                        onPressedPilus: () {},
+                        state: 60,
+                        text: AppTexts.weight,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -59,7 +93,13 @@ class HomeView extends StatelessWidget {
                   ),
                   Expanded(
                     child: ContainerWidget(
-                      child: Column(),
+                      child: TextStateButtonWidget(
+                        size: size,
+                        onPressedMinus: () {},
+                        onPressedPilus: () {},
+                        state: 28,
+                        text: AppTexts.age,
+                      ),
                     ),
                   ),
                 ],
