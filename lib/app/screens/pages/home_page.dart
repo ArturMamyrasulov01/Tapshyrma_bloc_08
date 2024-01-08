@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tapshyrma_bloc_08/app/screens/cubit/home_cubit.dart';
 
 import 'home_view.dart';
 
@@ -7,6 +9,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeView();
+    return BlocProvider(
+      create: (context) => HomeCubit(),
+      child: const HomeView(),
+    );
   }
 }
